@@ -1,50 +1,58 @@
-body {
-  font-family: Arial, sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  text-align: center;
-  color: #fff;
-  padding: 30px;
+const flashcards = [
+  { q: "What does HTML stand for?", a: "HyperText Markup Language" },
+  { q: "What does CSS stand for?", a: "Cascading Style Sheets" },
+  { q: "What is JavaScript used for?", a: "Making web pages interactive" },
+  { q: "What is a variable?", a: "A container to store data values" },
+  { q: "Which tag is used for headings?", a: "<h1> to <h6>" },
+  { q: "What is GitHub?", a: "A platform to host and manage code" },
+  { q: "What is Git?", a: "Version control system" },
+  { q: "What does CSS control?", a: "Layout and design of web pages" },
+  { q: "What is an array?", a: "Collection of multiple values" },
+  { q: "What is a function?", a: "A block of reusable code" },
+  { q: "What is localStorage?", a: "Stores data in browser permanently" },
+  { q: "What does DOM stand for?", a: "Document Object Model" },
+  { q: "Which language runs in browser?", a: "JavaScript" },
+  { q: "What is an IDE?", a: "Integrated Development Environment" },
+  { q: "What is responsive design?", a: "Design for all screen sizes" },
+  { q: "What is a loop?", a: "Repeats code multiple times" },
+  { q: "What is an event?", a: "User action like click or input" },
+  { q: "What is API?", a: "Application Programming Interface" },
+  { q: "What is frontend development?", a: "User interface development" },
+  { q: "What is backend development?", a: "Server-side development" }
+];
+
+let current = 0;
+
+const questionEl = document.getElementById("question");
+const answerEl = document.getElementById("answer");
+const showBtn = document.getElementById("showBtn");
+
+function loadCard() {
+  questionEl.textContent = flashcards[current].q;
+  answerEl.textContent = flashcards[current].a;
+  answerEl.classList.add("hidden");
+  showBtn.textContent = "Show Answer";
 }
 
-h1 {
-  margin-bottom: 20px;
+showBtn.onclick = () => {
+  if (answerEl.classList.contains("hidden")) {
+    answerEl.classList.remove("hidden");
+    showBtn.textContent = "Hide Answer";
+  } else {
+    answerEl.classList.add("hidden");
+    showBtn.textContent = "Show Answer";
+  }
+};
+
+function nextCard() {
+  current = (current + 1) % flashcards.length;
+  loadCard();
 }
 
-.card {
-  background: white;
-  color: #333;
-  width: 300px;
-  margin: auto;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-  font-size: 18px;
-  min-height: 120px;
+function prevCard() {
+  current = (current - 1 + flashcards.length) % flashcards.length;
+  loadCard();
 }
 
-.hidden {
-  display: none;
-}
-
-button {
-  margin: 10px;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  font-size: 16px;
-  background: #ffcc00;
-}
-
-button:hover {
-  background: #ffdd33;
-}
-
-.nav-buttons button {
-  background: #00e5ff;
-}
-
-.nav-buttons button:hover {
-  background: #1de9b6;
-}
+loadCard();
 
