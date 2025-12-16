@@ -1,29 +1,50 @@
-let flashcards = [
-  { question: "What is HTML?", answer: "Hyper Text Markup Language" },
-  { question: "What is CSS?", answer: "Cascading Style Sheets" },
-  { question: "What is JavaScript?", answer: "Programming language for web" }
-];
-
-let index = 0;
-
-function loadCard() {
-  document.getElementById("question").innerText = flashcards[index].question;
-  document.getElementById("answer").innerText = flashcards[index].answer;
-  document.getElementById("answer").classList.add("hidden");
+body {
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  text-align: center;
+  color: #fff;
+  padding: 30px;
 }
 
-function showAnswer() {
-  document.getElementById("answer").classList.remove("hidden");
+h1 {
+  margin-bottom: 20px;
 }
 
-function nextCard() {
-  index = (index + 1) % flashcards.length;
-  loadCard();
+.card {
+  background: white;
+  color: #333;
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  font-size: 18px;
+  min-height: 120px;
 }
 
-function prevCard() {
-  index = (index - 1 + flashcards.length) % flashcards.length;
-  loadCard();
+.hidden {
+  display: none;
 }
 
-loadCard();
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 16px;
+  background: #ffcc00;
+}
+
+button:hover {
+  background: #ffdd33;
+}
+
+.nav-buttons button {
+  background: #00e5ff;
+}
+
+.nav-buttons button:hover {
+  background: #1de9b6;
+}
+
