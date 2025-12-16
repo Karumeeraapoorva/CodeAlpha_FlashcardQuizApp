@@ -7,22 +7,21 @@
 </head>
 <body>
 
-  <div class="container">
-    <h2>Flashcard Quiz App</h2>
+  <h1>📘 Flashcard Quiz App</h1>
 
-    <div class="card">
-      <p id="question">Question will appear here</p>
-      <p id="answer" class="hidden">Answer will appear here</p>
-    </div>
+  <div class="card">
+    <div id="question">Question here</div>
+    <div id="answer" class="hidden">Answer here</div>
+  </div>
 
-    <button onclick="showAnswer()">Show Answer</button>
+  <button id="showBtn">Show Answer</button>
 
-    <div class="nav">
-      <button onclick="prevCard()">Previous</button>
-      <button onclick="nextCard()">Next</button>
-    </div>
+  <div class="nav-buttons">
+    <button onclick="prevCard()">Previous</button>
+    <button onclick="nextCard()">Next</button>
   </div>
 
   <script src="script.js"></script>
 </body>
 </html>
+
