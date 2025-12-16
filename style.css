@@ -1,22 +1,25 @@
 body {
-  font-family: Arial;
-  background: #f4f4f4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  text-align: center;
+  color: #fff;
+  padding: 30px;
 }
 
-.container {
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  text-align: center;
-  width: 300px;
+h1 {
+  margin-bottom: 20px;
 }
 
 .card {
-  margin: 15px 0;
+  background: white;
+  color: #333;
+  width: 300px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  font-size: 18px;
+  min-height: 120px;
 }
 
 .hidden {
@@ -24,7 +27,24 @@ body {
 }
 
 button {
-  margin: 5px;
-  padding: 8px 12px;
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 25px;
   cursor: pointer;
+  font-size: 16px;
+  background: #ffcc00;
 }
+
+button:hover {
+  background: #ffdd33;
+}
+
+.nav-buttons button {
+  background: #00e5ff;
+}
+
+.nav-buttons button:hover {
+  background: #1de9b6;
+}
+
